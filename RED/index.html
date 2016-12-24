@@ -1,0 +1,284 @@
+﻿<!DOCTYPE HTML>
+<html>
+<title>Индия</title>
+<style> 
+ body {
+    background-image: url("fon1upt.jpg");
+     background-position: center top;
+     background-repeat: no-repeat;
+}
+
+
+td.menu1 {background-color : Olive;}
+ 
+h1 {    
+   margin: 0;
+   }  
+   .india {
+    background: green; 
+    min-height: 107px;
+    font: 60px Impact, sans-serif; 
+    color: white;
+    white-space: nowrap;
+    position: relative; 
+   }
+   .india span {
+    position: absolute;
+    bottom: 0px;
+}
+
+ </style>
+
+ 
+
+<script type="text/javascript" language="JavaScript">// <![CDATA[
+    var res = "232121"; 
+
+   
+    function show_pic() {
+        var c1_elem = document.getElementById("c1");
+        var c2_elem = document.getElementById("c2");
+        var c3_elem = document.getElementById("c3");
+        var c4_elem = document.getElementById("c4");
+        c1_elem.style.display = 'none';
+        c2_elem.style.display = 'block';
+        c3_elem.style.display = 'none';
+        c4_elem.style.display = 'none';
+    }
+
+    function show_text() {
+        var c1_elem = document.getElementById("c1");
+        var c2_elem = document.getElementById("c2");
+        var c3_elem = document.getElementById("c3");
+        var c4_elem = document.getElementById("c4");
+        c1_elem.style.display = 'block';
+        c2_elem.style.display = 'none';
+        c3_elem.style.display = 'none';
+        c4_elem.style.display = 'none';
+    }
+
+    function show_pr() {
+        var c1_elem = document.getElementById("c1");
+        var c2_elem = document.getElementById("c2");
+        var c3_elem = document.getElementById("c3");
+        var c4_elem = document.getElementById("c4");
+        c1_elem.style.display = 'none';
+        c2_elem.style.display = 'none';
+        c3_elem.style.display = 'block';
+        c4_elem.style.display = 'none';
+    }
+
+    function show_kont() {
+        var c1_elem = document.getElementById("c1");
+        var c2_elem = document.getElementById("c2");
+        var c3_elem = document.getElementById("c3");
+        var c4_elem = document.getElementById("c4");
+        c1_elem.style.display = 'none';
+        c2_elem.style.display = 'none';
+        c3_elem.style.display = 'none';
+        c4_elem.style.display = 'block';
+    }
+    
+    
+function check_me()
+{
+    var count=0;
+    with(document.test) {
+if (!Q1[0].checked&&!Q1[1].checked&&!Q1[2].checked)  
+{count+=1};  
+if (!Q2[0].checked&&!Q2[1].checked&&!Q2[2].checked)  
+{count+=1};  
+if (!Q3[0].checked&&!Q3[1].checked&&!Q3[2].checked)  
+{count+=1};  
+if (!Q4[0].checked&&!Q4[1].checked&&!Q4[2].checked)  
+{count+=1};  
+if (!Q5[0].checked&&!Q5[1].checked&&!Q5[2].checked)  
+{count+=1};  
+if (!Q6[0].checked&&!Q6[1].checked&&!Q6[2].checked)  
+{count+=1};  
+if (count>0) alert("Вы выполнили не все задания. Проверьте себя!")    
+        else answer();
+    }
+} 
+ 
+function control(k, f1,f2,f3,f4,f5,f6) {
+if (k==1&&f1.checked) return true;
+if (k==2&&f2.checked) return true;
+if (k==3&&f3.checked) return true;
+if (k==4&&f4.checked) return true;
+if (k==5&&f5.checked) return true;
+if (k==6&&f6.checked) return true;
+return false;
+}
+
+function answer() {
+answ="";
+     with(document)    {
+    answ+=control(res.charAt(0) ,test.Q1[0],test.Q1[1],test.Q1[2])?"1":"0";
+answ+=control(res.charAt(1) ,test.Q2[0],test.Q2[1],test.Q2[2])?"1":"0";
+answ+=control(res.charAt(2) ,test.Q3[0],test.Q3[1],test.Q3[2])?"1":"0";
+answ+=control(res.charAt(3) ,test.Q4[0],test.Q4[1],test.Q4[2])?"1":"0";
+answ+=control(res.charAt(4) ,test.Q5[0],test.Q5[1],test.Q5[2])?"1":"0";
+answ+=control(res.charAt(5) ,test.Q6[0],test.Q6[1],test.Q6[2])?"1":"0";
+
+showResult();
+    }
+}
+ 
+function showResult()   {
+    var nok=0;
+    var i,s;
+ 
+for (i=0; i<answ.length;i++) {nok+=answ.charAt(i)=="1"?1:0;}
+if(nok==6) s="ОТЛИЧНО";
+if(nok<6) s="ХОРОШО";
+if(nok<4) s="УДОВЛЕТВОРИТЕЛЬНО";
+if (nok<3) s="НЕУДОВЛЕТВОРИТЕЛЬНО";
+    document.test.s1.
+    value="Количество правильных ответов "+nok+". Ваша оценка "+s+". Посмотрите на окно рядом с номером вопроса. Если ответ правильный, там (+). Если ответ ошибочен, там (-).";
+ 
+with(document.test)
+    {
+    if (answ.charAt(0)=="1") {T1.value=" + "} else {T1.value=" - "};
+   if (answ.charAt(1)=="1") {T2.value=" + "} else {T2.value=" - "};
+   if (answ.charAt(2)=="1") {T3.value=" + "} else {T3.value=" - "};
+   if (answ.charAt(3)=="1") {T4.value=" + "} else {T4.value=" - "};
+   if (answ.charAt(4)=="1") {T5.value=" + "} else {T5.value=" - "};
+   if (answ.charAt(5)=="1") {T6.value=" + "} else {T6.value=" - "};
+     }
+}
+function showhide(obj){
+    if(obj == 'none') return 'inline';
+    else return 'none';
+}
+// ]]>
+
+</script>
+
+
+<body> <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+<h1 class="india"><span>Индия</span></h1>
+
+<table width="100%" border="1" cellspacing="5"> 
+<!-- Я попытлся переставить данные снизу в правильном порядке, чтобы они были более читабельны, но при этом вся таблица искажается, поэтому пока что пусть будет так, т.к. сейчас вид таблицы нормальный  -->
+
+<tr>
+ <td class="menu1" onclick="show_text()" width="8%" height="90"> <font size="5" face="Arial" color="black"> ИНФОРМАЦИЯ </font>
+ </td>
+ <td class="menu1" rowspan="5">
+
+ 
+
+ <div id="c1" style="display:none">
+И́ндия, официальное название — Респу́блика И́ндия — государство в Южной Азии. Население — 1 329 356 004 человек (август 2016), территория — 3 287 263 км²,
+<br> по обоим этим показателям является крупнейшей страной Южной Азии. Занимает второе место в мире по численности населения и седьмое по территории.
+<br> Столица — <a href="https://ru.wikipedia.org/wiki/%D0%9D%D1%8C%D1%8E-%D0%94%D0%B5%D0%BB%D0%B8"> Нью-Дели </a>. Государственные языки — <a href="https://ru.wikipedia.org/wiki/%D0%A5%D0%B8%D0%BD%D0%B4%D0%B8"> хинди </a> и <a href="https://ru.wikipedia.org/wiki/%D0%90%D0%BD%D0%B3%D0%BB%D0%B8%D0%B9%D1%81%D0%BA%D0%B8%D0%B9_%D1%8F%D0%B7%D1%8B%D0%BA"> английский </a>. Федеративное государство, парламентская республика. Премьер-министр — <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%BE%D0%B4%D0%B8,_%D0%9D%D0%B0%D1%80%D0%B5%D0%BD%D0%B4%D1%80%D0%B0"> Нарендра Моди </a>,
+<br> президент — <a href="https://ru.wikipedia.org/wiki/%D0%9C%D1%83%D0%BA%D0%B5%D1%80%D0%B4%D0%B6%D0%B8,_%D0%9F%D1%80%D0%B0%D0%BD%D0%B0%D0%B1_%D0%9A%D1%83%D0%BC%D0%B0%D1%80"> Пранаб Мукерджи </a>. Подразделяется на 29 штатов и 7 союзных территорий.
+<br> Индия граничит с Пакистаном на западе, с Китаем, Непалом и Бутаном на северо-востоке, с Бангладеш и Мьянмой на востоке. Кроме того, Индия имеет морские
+<br> границы с Мальдивами на юго-западе, со Шри-Ланкой на юге и с Индонезией на юго-востоке. Спорная территория штата Джамму и Кашмир имеет границу с
+<br> Афганистаном.
+<br> Индийский субконтинент является родиной древней индской цивилизации. На протяжении большей части своей истории Индия являлась центром важных торговых
+<br> маршрутов и славилась своими богатствами и высокой культурой. В Индии зародились такие религии, как <a href="https://ru.wikipedia.org/wiki/%D0%98%D0%BD%D0%B4%D1%83%D0%B8%D0%B7%D0%BC"> индуизм </a>, <a href="https://ru.wikipedia.org/wiki/%D0%91%D1%83%D0%B4%D0%B4%D0%B8%D0%B7%D0%BC"> буддизм </a>, <a href="https://ru.wikipedia.org/wiki/%D0%A1%D0%B8%D0%BA%D1%85%D0%B8%D0%B7%D0%BC"> сикхизм </a> и <a href="https://ru.wikipedia.org/wiki/%D0%94%D0%B6%D0%B0%D0%B9%D0%BD%D0%B8%D0%B7%D0%BC"> джайнизм </a>. В первом
+<br> тысячелетии нашей эры на индийский субконтинент пришли также <a href="https://ru.wikipedia.org/wiki/%D0%A5%D1%80%D0%B8%D1%81%D1%82%D0%B8%D0%B0%D0%BD%D1%81%D1%82%D0%B2%D0%BE"> христианство </a> и <a href="https://ru.wikipedia.org/wiki/%D0%98%D1%81%D0%BB%D0%B0%D0%BC"> ислам </a>, оказавшие значительное влияние на развитие разнообразной культуры
+<br> региона. В XVIII — первой половине XX века Индия была постепенно колонизирована <a href="https://ru.wikipedia.org/wiki/%D0%91%D1%80%D0%B8%D1%82%D0%B0%D0%BD%D1%81%D0%BA%D0%B0%D1%8F_%D0%B8%D0%BC%D0%BF%D0%B5%D1%80%D0%B8%D1%8F"> Британской империей </a>. В 1947 году, после многолетней борьбы, страна получила
+<br> независимость. К концу XX века Индия достигла больших успехов в экономическом и военном развитии, экономика страны стала одной из самых
+<br> быстроразвивающихся в мире. 
+<br> Несмотря на это, значительная часть населения продолжает жить за чертой бедности. Насущными проблемами являются также высокий уровень коррупции и отсталая
+<br> система здравоохранения.
+<br> Индия является потенциальной сверхдержавой, обладает ядерным оружием. Она входит в такие международные организации, как <a href="https://ru.wikipedia.org/wiki/%D0%9E%D1%80%D0%B3%D0%B0%D0%BD%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F_%D0%9E%D0%B1%D1%8A%D0%B5%D0%B4%D0%B8%D0%BD%D1%91%D0%BD%D0%BD%D1%8B%D1%85_%D0%9D%D0%B0%D1%86%D0%B8%D0%B9"> ООН </a>, <a href="https://ru.wikipedia.org/wiki/%D0%91%D0%BE%D0%BB%D1%8C%D1%88%D0%B0%D1%8F_%D0%B4%D0%B2%D0%B0%D0%B4%D1%86%D0%B0%D1%82%D0%BA%D0%B0"> G20 </a>, <a href="https://ru.wikipedia.org/wiki/%D0%92%D1%81%D0%B5%D0%BC%D0%B8%D1%80%D0%BD%D0%B0%D1%8F_%D1%82%D0%BE%D1%80%D0%B3%D0%BE%D0%B2%D0%B0%D1%8F_%D0%BE%D1%80%D0%B3%D0%B0%D0%BD%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F"> ВТО </a>, <a href="https://ru.wikipedia.org/wiki/%D0%90%D1%81%D1%81%D0%BE%D1%86%D0%B8%D0%B0%D1%86%D0%B8%D1%8F_%D1%80%D0%B5%D0%B3%D0%B8%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE_%D1%81%D0%BE%D1%82%D1%80%D1%83%D0%B4%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%B0_%D0%AE%D0%B6%D0%BD%D0%BE%D0%B9_%D0%90%D0%B7%D0%B8%D0%B8"> Ассоциация
+<br> регионального сотрудничества Южной Азии </a>, <a href="https://ru.wikipedia.org/wiki/%D0%A1%D0%BE%D0%B4%D1%80%D1%83%D0%B6%D0%B5%D1%81%D1%82%D0%B2%D0%BE_%D0%9D%D0%B0%D1%86%D0%B8%D0%B9"> Содружество наций </a>, а также <a href="https://ru.wikipedia.org/wiki/%D0%91%D0%A0%D0%98%D0%9A%D0%A1"> БРИКС </a> и <a href="https://ru.wikipedia.org/wiki/%D0%A8%D0%B0%D0%BD%D1%85%D0%B0%D0%B9%D1%81%D0%BA%D0%B0%D1%8F_%D0%BE%D1%80%D0%B3%D0%B0%D0%BD%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F_%D1%81%D0%BE%D1%82%D1%80%D1%83%D0%B4%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%B0"> ШОС </a>.
+ <br>  
+</div>
+ 
+
+<div id="c2" class="id2" >
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d17987635.775798097!2d80.72950593634022!3d20.112326484608058!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sru!4v1475000913498"  width="1132" height="700" frameborder="0" style="border:0" allowfullscreen></iframe>
+</div> 
+
+<div id="c3" style="display:none"> 
+
+&nbsp;&nbsp;&nbsp;<span style="color:#112233;text-decoration:underline;cursor:pointer;" onclick="document.getElementById('instruction').style.display = showhide(document.getElementById('instruction').style.display)">Инструкция</span>
+ <br/>
+<div id="instruction" style="display: none; width: 100%;">
+<ul>
+<li>Выберите один из вариантов в каждом из 6 вопросов;</li>
+<li>Нажмите на кнопку "Показать результат";</li>
+<li>Скрипт не покажет результат, пока Вы не ответите на все вопросы;</li>
+<li>Загляните в окно рядом с номером задания. Если ответ правильный, то там (+). Если Вы ошиблись, там (-).</li>
+<li>За каждый правильный ответ начисляется 1 балл;</li>
+<li>Оценки: менее 3 баллов - НЕУДОВЛЕТВОРИТЕЛЬНО, от 3 но менее 5 - УДОВЛЕТВОРИТЕЛЬНО, 5 и менее 6 - ХОРОШО, 6 - ОТЛИЧНО;</li>
+<li>Чтобы сбросить результат тестирования, нажать кнопку "Сбросить ответы";</li>
+</ul>
+</div>
+<form name="test"><ol>
+<li><INPUT type="text" size="1" value="" name="T1"/><b> Столица Индии?</b><br/>
+<input type="radio" value="0" name="Q1"/> Нью - Йорк<br />
+<input type="radio" value="1" name="Q1"/> Нью - Дели<br />
+<input type="radio" value="2" name="Q1"/> Нью - Дали<br />
+<br/></li><li><INPUT type="text" size="1" value="" name="T2"/><b> Какой из этих языков относится к государственному языку Индии?</b><br/>
+<input type="radio" value="0" name="Q2"/> Хиндко<br />
+<input type="radio" value="1" name="Q2"/> Джакати<br />
+<input type="radio" value="2" name="Q2"/> Хинди<br />
+<br/></li><li><INPUT type="text" size="1" value="" name="T3"/><b> В какую из организаций Индия не входит?</b><br/>
+<input type="radio" value="0" name="Q3"/> БРИКС<br />
+<input type="radio" value="1" name="Q3"/> НАТО<br />
+<input type="radio" value="2" name="Q3"/> ООН<br />
+<br/></li><li><INPUT type="text" size="1" value="" name="T4"/><b> Какая религия зародилась в Индии?</b><br/>
+<input type="radio" value="0" name="Q4"/> Джакхизм<br />
+<input type="radio" value="1" name="Q4"/> Синтоизм<br />
+<input type="radio" value="2" name="Q4"/> Иудаизм<br />
+<br/></li><li><INPUT type="text" size="1" value="" name="T5"/><b> Население Индии ...</b><br/>
+<input type="radio" value="0" name="Q5"/> от 900 млн. до 1200 млн.<br />
+<input type="radio" value="1" name="Q5"/> от 1200 млн. до 1400 млн.<br />
+<input type="radio" value="2" name="Q5"/> от 1400 млн. и более<br />
+<br/></li><li><INPUT type="text" size="1" value="" name="T6"/><b> Когда страна получила независимость?</b><br/>
+<input type="radio" value="0" name="Q6"/> в 1942<br />
+<input type="radio" value="1" name="Q6"/> в 1947<br />
+<input type="radio" value="2" name="Q6"/> в 1951<br />
+<br/></li></ol>      
+<CENTER>
+<P><TEXTAREA name="s1" rows="4" cols="70" readonly> </TEXTAREA> </P>
+<INPUT onclick="check_me()" type="button" value="Показать результат"/>&nbsp;&nbsp;&nbsp;&nbsp; 
+<INPUT type="reset" value="Сбросить ответы"/> 
+</CENTER>        
+</form> 
+<!-- Test created by service http://test.fromgomel.com -->
+
+<input type ="button" value ="Проверить ответы" onclick="check()"> 
+</div>
+
+<div id="c4" style="display:none"> 
+ Вконтакте : <a href="https://vk.com/id108240186"> Дмитрий Рендоренко</a> <br>
+ Почта : dmitryrendorenko@gmail.com
+</div>
+
+ </td>
+</tr>
+
+<tr>
+ <td class="menu1" onclick="show_pic()" width="8%" height="90"> <font size="5" face="Arial" color="black"> КАРТА ИНДИИ </font>
+ </td>
+</tr>
+
+<tr>
+ <td class="menu1" onclick="show_pr()" width="8%" height="90"> <font size="5" face="Arial"color="black"> ВИКТОРИНА </font>
+ </td>
+</tr>
+
+<tr>
+<td class="menu1" onclick="show_kont()" width="8%" height="90"> <font size="5" face="Arial"color="black"> КОНТАКТЫ </font>
+</td>
+</tr>
+
+ 
+<tr>
+<td>
+</td>
+</tr>
+
+</table>
+
+
+</body>
+</html>
